@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item active" href="#">Home</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="blog-header">
+            <h1 class="blog-title">A Blog in the wild</h1>
+
+            <p class="lead blog-description">
+                This is an example of how to use
+                <a href="http://github.com/matks/MarkdownBlogBundle">
+                    MarkdownBlogBundle
+                </a>.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                {% for month, posts in index.getPostsGroupedByMonths() %}
+
+                    <h2>{{ month }}</h2>
+                    <div class='row'>
+                        <div class='span12'>
+                            <hr>
+                        </div>
+                    </div>
+
+                    {% for post in posts %}
+                        <div class="blog-post">
+                            <h2 class="blog-post-title">{{ post.title }}</h2>
+
+                            <p class="blog-post-meta">{{ post.date }}
+                                by
+                                <a href="{{ post.authorUrl }}">{{ post.authorName }}</a>
+                            </p>
+
+                            {{ post.content | raw }}
+                        </div>
+
+                    {% endfor %}
+                {% endfor %}
+
+
+                <nav>
+                    <ul class="pager">
+                        <li><a href="{{ path('homepage', {'o': previousOffset }) }}">Previous</a></li>
+                        <li><a href="{{ path('homepage', {'o': nextOffset}) }}">Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+
+                    <p>This is a Symfony 2.8 application using MarkdownBlogBundle blogging
+                        data structure and Bootstrap template. This is an example of how
+                        MarkdownBlogBundle can be used to build a simple blog.</p>
+                </div>
+
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/matks/MarkdownBlogBundle">GitHub</a></li>
+                        <li><a href="https://twitter.com/mathieuKs">Twitter</a></li>
+                        <li><a href="http://symfony.com/">Symfony</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="blog-footer">
+        <p>Blog template from <a href="http://getbootstrap.com/examples/blog/">Bootstrap</a>
+            by
+            <a href="https://twitter.com/mdo">@mdo</a>.
+        </p>
+
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+{% endblock %}
