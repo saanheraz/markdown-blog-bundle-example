@@ -1,0 +1,21 @@
+library_entries:
+
+    Opening-the-blog:
+        date: '2016-04-10'
+        category: Blog
+
+    Another-blog-post:
+        date: '2016-04-11'
+        category: PHP
+
+    Welcome-on-my-blog:
+        date: '2016-05-02'
+        category: Blog
+
+    Hidden-blog-one:
+        date: '2016-03-01'
+        category: Blog
+
+    Hidden-blog-two:
+        date: '2016-03-10'
+        category: Blog
