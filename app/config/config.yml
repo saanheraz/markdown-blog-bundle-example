@@ -1,5 +1,6 @@
 parameters:
     locale: en
+    secret: NotASecret
 
 framework:
     secret:          "%secret%"

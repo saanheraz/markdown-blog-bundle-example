@@ -6,6 +6,7 @@ use AppBundle\ModelView\IndexViewFactory;
 use Matks\MarkdownBlogBundle\Blog\Library;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends Controller
 {
