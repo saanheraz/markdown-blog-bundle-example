@@ -5,6 +5,7 @@ This is an example to show how to use [MarkdownBlogBundle](https://github.com/ma
  - blog data and structure are provided by MarkdownBlogBundle
  - template from [bootstrap](http://getbootstrap.com/)
 
+<img src="https://cloud.githubusercontent.com/assets/3830050/15139430/61e1b8e2-1696-11e6-9dec-28e3909848b9.jpg" width="400px"/>
 
 ## Installation
 
