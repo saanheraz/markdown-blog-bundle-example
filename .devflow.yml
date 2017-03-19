@@ -1,6 +1,7 @@
 stack:
-  apache:
-    version: 2.4
+  nginx:
+    document_root: web
+    index: app.php
 
   php:
     version: 5.6
