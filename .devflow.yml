@@ -1,0 +1,11 @@
+stack:
+  apache:
+    version: 2.4
+
+  php:
+    version: 5.6
+
+deployment:
+  install:
+    - composer install --prefer-dist --no-interaction --optimize-autoloader
+    - chown -R www-data:www-data app/cache/ app/logs/
